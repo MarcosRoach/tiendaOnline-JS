@@ -1,0 +1,395 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  max-width: 2048px;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+a:link,
+a:visited,
+a:active,
+a:focus {
+  text-decoration: none;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+.titulo-seccion {
+  font: size 1.6rem;
+  font-weight: 700;
+}
+.titulo-seccion span {
+  color: orange;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.ofertas .btn {
+  border: 0 !important;
+  font-weight: 700;
+  color: orange;
+  transition: all 0.5s ease-in-out;
+}
+.ofertas .btn:hover {
+  color: black;
+}
+
+/* TABLETS */
+/* TABLETS */
+/* PANTALLAS GRANDES */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0px 100px;
+  }
+}
+/* PANTALLAS GRANDES */
+nav {
+  z-index: 99;
+  transition: all 0.3s ease;
+}
+nav .navbar-brand img {
+  width: 200px;
+}
+nav .icono-carrito {
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: relative;
+}
+nav .icono-carrito span {
+  position: absolute;
+  top: -10px;
+  left: 79%;
+  background: orange;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 2px;
+}
+
+.navbar-back {
+  background-color: rgb(43, 42, 42);
+}
+
+/* TABLETS */
+@media (min-width: 768px) {
+  nav .navbar-brand img {
+    width: 240px;
+  }
+}
+/* TABLETS */
+/* PANTALLAS GRANDES */
+@media (min-width: 1024px) {
+  nav .navbar-brand img {
+    width: 280px;
+  }
+}
+/* PANTALLAS GRANDES */
+.carousel img {
+  height: 60vh;
+}
+
+.politicas .icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+.politicas .datos {
+  text-align: center;
+}
+.politicas .datos h5 {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.politicas .datos p {
+  font-size: 0.9rem;
+  color: rgb(147, 147, 147);
+}
+
+.ofertas .oferta-item {
+  min-height: 175px;
+  background-color: rgb(43, 42, 42);
+  display: flex;
+  align-items: center;
+}
+.ofertas .oferta-item .imagen h2 {
+  color: rgb(179, 177, 177);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.ofertas .oferta-item .texto {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.ofertas .oferta-item .texto h4 {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.ofertas .oferta-item .texto .porcentaje {
+  color: white;
+  font-weight: 300;
+}
+.ofertas .oferta-item .texto a {
+  color: orange;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.productos .imagen {
+  display: flex;
+  justify-content: center;
+}
+.productos .texto h4 {
+  font-size: 1rem;
+}
+.productos .texto h5 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.imagen-fija {
+  background-image: url("../images/update-Parallax.jpg");
+  min-height: 300px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.imagen-fija .texto {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+.imagen-fija .texto h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+.imagen-fija .texto h2 span {
+  font-weight: 700;
+  line-height: 2;
+}
+
+.noticias .noticia h4 {
+  color: rgb(132, 130, 130);
+  font-size: 1rem;
+  font-weight: 700;
+}
+.noticias .noticia p {
+  color: rgb(132, 130, 130);
+  font-size: 1rem;
+  font-weight: 100;
+  text-align: justify;
+}
+
+/* TABLETS */
+@media (min-width: 768px) {
+  .imagen-fija {
+    min-height: 400px;
+  }
+  .imagen-fija .texto {
+    height: 400px;
+  }
+  .imagen-fija .texto h2 {
+    font-size: 3rem;
+  }
+  .carousel-caption {
+    text-align: left;
+    top: 20%;
+  }
+  .carousel-caption h5 {
+    color: orange;
+    font-size: 1.4rem;
+  }
+  .carousel-caption h4 {
+    font-weight: 300;
+    font-size: 4rem;
+  }
+  .carousel-caption h3 {
+    font-weight: 700;
+    font-size: 4rem;
+  }
+}
+/* TABLETS */
+/* PANTALLAS GRANDES */
+@media (min-width: 1024px) {
+  .carousel img {
+    height: 100vh;
+  }
+  .carousel .carousel-caption {
+    text-align: left;
+    top: 38%;
+  }
+  .carousel .carousel-caption h5 {
+    color: orange;
+    font-size: 1.4rem;
+  }
+  .carousel .carousel-caption h4 {
+    font-weight: 300;
+    font-size: 4rem;
+  }
+  .carousel .carousel-caption h3 {
+    font-weight: 700;
+    font-size: 4rem;
+  }
+  .politicas .datos {
+    text-align: left;
+  }
+  .imagen-fija {
+    background-image: url("../images/update-Parallax.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .imagen-fija .texto {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+  }
+  .imagen-fija .texto h2 {
+    text-align: center;
+    font-size: 3.6rem;
+    font-weight: 300;
+  }
+  .imagen-fija .texto h2 span {
+    font-weight: 700;
+    line-height: 2;
+  }
+}
+/* PANTALLAS GRANDES */
+footer {
+  background-color: rgb(43, 42, 42);
+  color: white;
+}
+footer h2 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+footer h5 {
+  font-size: 1rem;
+  font-weight: 100;
+}
+footer .linea-div {
+  border-top: 2px solid #ffae00;
+  height: 20px;
+  max-width: 80px;
+  padding: 0;
+}
+footer .social .iconos .icono {
+  font-size: 2.4rem;
+  transition: all 0.5s;
+}
+footer .boletin input {
+  height: 40px;
+  background-color: rgb(109, 109, 109);
+  border: 0;
+  padding-left: 4px;
+}
+footer small {
+  text-align: center;
+  display: block;
+}
+
+/* TABLETS */
+/* TABLETS */
+/* PANTALLAS GRANDES */
+@media (min-width: 1024px) {
+  footer .social .icono:hover {
+    color: orange;
+    cursor: pointer;
+  }
+}
+/* PANTALLAS GRANDES */
+.jumbo {
+  background-image: url(../images/jumbo/jumbo-carrito.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 500px;
+}
+
+.carrito .titulo h3 {
+  background-color: rgb(230, 228, 228);
+  padding-left: 0;
+  padding-right: 0;
+}
+.carrito .pedido .pedido-tarjeta {
+  border: 1px solid orange;
+}
+.carrito .pedido .pedido-tarjeta .imagen {
+  background-color: rgb(230, 228, 228);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carrito .pedido .pedido-tarjeta .datos h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.carrito .pedido .pedido-tarjeta .datos h5 {
+  font-weight: 1.4rem;
+}
+.carrito .pedido .pedido-tarjeta .datos h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 0.8rem;
+}
+.carrito .pedido .pedido-tarjeta .datos h2 {
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+.carrito .pedido .pedido-tarjeta .eliminar {
+  padding-left: 0;
+  padding-right: 0;
+}
+.carrito .pedido .pedido-tarjeta .eliminar button {
+  width: 100%;
+}
+.carrito .resumen h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.carrito .resumen h5 {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.carrito .resumen h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.carrito .resumen .pago {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */

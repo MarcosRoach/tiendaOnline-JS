@@ -1,0 +1,60 @@
+nav {
+  z-index: 99;
+  transition: all 0.3s ease;
+
+  .navbar-brand {
+    img {
+      width: 200px;
+    }
+  }
+
+  .icono-carrito {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: -10px;
+      left: 79%;
+      background: orange;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding: 2px;
+    }
+  }
+}
+
+.navbar-back {
+  background-color: $color-dark-100;
+}
+
+/* TABLETS */
+@media (min-width: 768px) {
+  nav {
+    .navbar-brand {
+      img {
+        width: 240px;
+      }
+    }
+  }
+}
+/* TABLETS */
+
+/* PANTALLAS GRANDES */
+@media (min-width: 1024px) {
+  nav {
+    .navbar-brand {
+      img {
+        width: 280px;
+      }
+    }
+  }
+}
+/* PANTALLAS GRANDES */

@@ -1,0 +1,56 @@
+footer {
+  background-color: $color-dark-100;
+  color: white;
+  h2 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  h5 {
+    font-size: 1rem;
+    font-weight: 100;
+  }
+  .linea-div {
+    border-top: 2px solid #ffae00;
+    height: 20px;
+    max-width: 80px;
+    padding: 0;
+  }
+  .social {
+    .iconos {
+      .icono {
+        font-size: 2.4rem;
+        transition: all 0.5s;
+      }
+    }
+  }
+  .boletin {
+    input {
+      height: 40px;
+      background-color: rgb(109, 109, 109);
+      border: 0;
+      padding-left: 4px;
+    }
+  }
+  small {
+    text-align: center;
+    display: block;
+  }
+}
+
+/* TABLETS */
+@media (min-width: 768px) {
+}
+/* TABLETS */
+
+/* PANTALLAS GRANDES */
+@media (min-width: 1024px) {
+  footer {
+    .social {
+      .icono:hover {
+        color: orange;
+        cursor: pointer;
+      }
+    }
+  }
+}
+/* PANTALLAS GRANDES */

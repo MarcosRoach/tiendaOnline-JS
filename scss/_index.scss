@@ -1,0 +1,220 @@
+.carousel {
+  img {
+    height: 60vh;
+  }
+}
+
+.politicas {
+  .icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    // color: $color-gris;
+  }
+  .datos {
+    text-align: center;
+
+    h5 {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    p {
+      font-size: 0.9rem;
+      color: $color-gris;
+    }
+  }
+}
+
+.ofertas {
+  .oferta-item {
+    min-height: 175px;
+    background-color: $color-dark-100;
+
+    display: flex;
+    align-items: center;
+
+    .imagen {
+      h2 {
+        color: rgb(179, 177, 177);
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+
+    .texto {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      h4 {
+        color: white;
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+      .porcentaje {
+        color: white;
+        font-weight: 300;
+      }
+      a {
+        color: orange;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.productos {
+  .imagen {
+    display: flex;
+    justify-content: center;
+  }
+
+  .texto {
+    h4 {
+      font-size: 1rem;
+    }
+    h5 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.imagen-fija {
+  background-image: url("../images/update-Parallax.jpg");
+  min-height: 300px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .texto {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
+    h2 {
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 300;
+
+      span {
+        font-weight: 700;
+        line-height: 2;
+      }
+    }
+  }
+}
+
+.noticias {
+  .noticia {
+    h4 {
+      color: rgb(132, 130, 130);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    p {
+      color: rgb(132, 130, 130);
+      font-size: 1rem;
+      font-weight: 100;
+      text-align: justify;
+    }
+  }
+}
+
+/* TABLETS */
+@media (min-width: 768px) {
+  .imagen-fija {
+    min-height: 400px;
+
+    .texto {
+      height: 400px;
+
+      h2 {
+        font-size: 3rem;
+      }
+    }
+  }
+  .carousel-caption {
+    text-align: left;
+    top: 20%;
+    h5 {
+      color: orange;
+      font-size: 1.4rem;
+    }
+    h4 {
+      font-weight: 300;
+      font-size: 4rem;
+    }
+    h3 {
+      font-weight: 700;
+      font-size: 4rem;
+    }
+  }
+}
+/* TABLETS */
+
+/* PANTALLAS GRANDES */
+@media (min-width: 1024px) {
+  .carousel {
+    img {
+      height: 100vh;
+    }
+    .carousel-caption {
+      text-align: left;
+      top: 38%;
+      h5 {
+        color: orange;
+        font-size: 1.4rem;
+      }
+      h4 {
+        font-weight: 300;
+        font-size: 4rem;
+      }
+      h3 {
+        font-weight: 700;
+        font-size: 4rem;
+      }
+    }
+  }
+  .politicas {
+    .datos {
+      text-align: left;
+    }
+  }
+
+  .imagen-fija {
+    background-image: url("../images/update-Parallax.jpg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .texto {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+
+      h2 {
+        text-align: center;
+        font-size: 3.6rem;
+        font-weight: 300;
+
+        span {
+          font-weight: 700;
+          line-height: 2;
+        }
+      }
+    }
+  }
+}
+/* PANTALLAS GRANDES */
