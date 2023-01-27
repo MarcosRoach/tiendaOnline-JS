@@ -193,7 +193,7 @@ window.addEventListener("load", function (event) {
       precio: 6300,
       oferta: "si",
       descuentoPorcentaje: 10,
-      precioDescuento: 0,
+      precioDescuento: 5670,
       imagen: "auriculares-rosa",
       imagen_sm: "auriculares-rosa-sm",
     },
@@ -389,7 +389,7 @@ window.addEventListener("load", function (event) {
     arrCarrito.push(producto);
   }
 
-  // LISTENERSs
+  // LISTENERS
   // Capturo Botones de Compra
   const botonesCompra = document.querySelectorAll(".comprar");
 

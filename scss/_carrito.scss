@@ -15,8 +15,20 @@
     }
   }
   .pedido {
+    .vacio {
+      .imagen-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .imagen-carrito-vacio {
+        max-width: 300px;
+        height: auto;
+      }
+    }
     .pedido-tarjeta {
       border: 1px solid orange;
+
       .imagen {
         background-color: rgb(230, 228, 228);
         display: flex;
@@ -30,6 +42,9 @@
         }
         h5 {
           font-weight: 1.4rem;
+        }
+        p {
+          text-align: justify;
         }
         h3 {
           font-size: 1.2rem;
@@ -72,3 +87,19 @@
     }
   }
 }
+
+/* TABLETS */
+@media (min-width: 768px) {
+  .pedido {
+    .imagen-carrito-vacio {
+      min-width: 600px;
+      height: auto;
+    }
+  }
+}
+/* TABLETS */
+
+/* PANTALLAS GRANDES */
+@media (min-width: 1024px) {
+}
+/* PANTALLAS GRANDES */

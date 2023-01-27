@@ -65,24 +65,31 @@
 
     <div class="carrito container mt-5 mb-5">
       <div class="row">
-        <div class="col-8">
+        <div class="col-12 col-lg-8">
           <div class="titulo pt-5 pb-5">
             <h3 class="ps-2 pt-5 pb-5">HOLA, TE AGRADECEMOS TU COMPRA</h3>
             <h5>
-              TOTAL (<span></span> Producto) <span class="total">$ 25.000</span>
+              TOTAL (<span class="cantidad-productos"></span>)
+              <span class="total-carrito">$ 25.000</span>
             </h5>
             <p>
               Los artículos en tu carrito no están reservados. Terminá el
               proceso de compra ahora para hacerte con ellos.
             </p>
           </div>
-          <div class="pedido" id="pedido"></div>
+          <div class="pedido" id="pedido">
+            <!-- <div class="vacio">
+              <div class="imagen-cont">
+                <img class="imagen" src="../images/carrito_vacio.webp" alt="" />
+              </div>
+            </div> -->
+          </div>
         </div>
-        <div class="resumen col-4 mt-5 mb-5">
+        <div class="resumen col-12 col-lg-4 mt-5 mb-5">
           <h3>RESUMEN DEL PEDIDO</h3>
           <div class="row">
-            <h5 class="col-8">1 Producto</h5>
-            <h5 class="col-4">$ 20.000</h5>
+            <h5 class="col-8 cantidad-productos" id=""></h5>
+            <h5 class="col-4 total-carrito" id="total-carrito">$</h5>
           </div>
           <div class="row">
             <h5 class="col-8">ENTREGA</h5>
@@ -91,7 +98,7 @@
           </div>
           <div class="row">
             <h4 class="col-8">TOTAL</h4>
-            <h4 class="col-4">$ 20.000</h4>
+            <h4 class="col-4 total-carrito">$</h4>
             <small>IVA Incluido</small>
             <hr />
           </div>

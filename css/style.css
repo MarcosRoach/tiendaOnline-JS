@@ -342,6 +342,15 @@ footer small {
   padding-left: 0;
   padding-right: 0;
 }
+.carrito .pedido .vacio .imagen-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carrito .pedido .vacio .imagen-carrito-vacio {
+  max-width: 300px;
+  height: auto;
+}
 .carrito .pedido .pedido-tarjeta {
   border: 1px solid orange;
 }
@@ -357,6 +366,9 @@ footer small {
 }
 .carrito .pedido .pedido-tarjeta .datos h5 {
   font-weight: 1.4rem;
+}
+.carrito .pedido .pedido-tarjeta .datos p {
+  text-align: justify;
 }
 .carrito .pedido .pedido-tarjeta .datos h3 {
   font-size: 1.2rem;
@@ -391,5 +403,16 @@ footer small {
   justify-content: center;
   align-items: center;
 }
+
+/* TABLETS */
+@media (min-width: 768px) {
+  .pedido .imagen-carrito-vacio {
+    min-width: 600px;
+    height: auto;
+  }
+}
+/* TABLETS */
+/* PANTALLAS GRANDES */
+/* PANTALLAS GRANDES */
 
 /*# sourceMappingURL=style.css.map */
