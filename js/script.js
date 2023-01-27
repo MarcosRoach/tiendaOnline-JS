@@ -214,11 +214,12 @@ window.addEventListener("load", function (event) {
   ];
 
   // Cargo carrito de localStorage o si es vacio declaro la variable vacia
+  let carrito = [];
   if (localStorage.getItem("carrito")) {
     carrito = JSON.parse(localStorage.getItem("carrito"));
     console.log(carrito);
   } else {
-    let carrito = [];
+    carrito = [];
     console.log(carrito);
   }
 
