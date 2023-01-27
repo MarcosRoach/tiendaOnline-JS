@@ -389,7 +389,7 @@ window.addEventListener("load", function (event) {
     arrCarrito.push(producto);
   }
 
-  // LISTENERS
+  // LISTENERSs
   // Capturo Botones de Compra
   const botonesCompra = document.querySelectorAll(".comprar");
 
