@@ -28,4 +28,4 @@ async function cargarCatalogo() {
 }
 
 // Cargar el catalogo
-cargarCatalogo();+
+cargarCatalogo();
