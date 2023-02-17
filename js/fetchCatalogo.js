@@ -2,7 +2,7 @@ let catalogo = [];
 // consumir JSON de Catalogo
 
 async function cargarCatalogo() {
-  const response = await fetch("../JSON/productos.json");
+  const response = await fetch("productos.json");
   // extaer datos del JSON en forma de objetos
   const data = await response.json();
 
