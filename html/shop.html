@@ -17,12 +17,6 @@
       href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css"
       rel="stylesheet"
     />
-    <!-- Animatede.css -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-
     <!-- Estilos -->
     <link rel="stylesheet" href="../css/style.css" />
 
@@ -58,7 +52,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../html/shop.html">Shop</a>
+              <a class="nav-link active" href="#">Shop</a>
             </li>
           </ul>
           <form class="d-flex mt-3 mb-3">
@@ -73,50 +67,28 @@
 
     <div class="jumbo"></div>
 
-    <div class="carrito container mt-5 mb-5">
-      <div class="row">
-        <div class="col-12 col-lg-8">
-          <div class="titulo pt-5 pb-5">
-            <h3 class="ps-2 pt-5 pb-5">HOLA, TE AGRADECEMOS TU COMPRA</h3>
-            <h5>
-              TOTAL (<span class="cantidad-productos"></span>)
-              <span class="total-carrito">$ 25.000</span>
-            </h5>
-            <p>
-              Los artículos en tu carrito no están reservados. Terminá el
-              proceso de compra ahora para hacerte con ellos.
-            </p>
-          </div>
-          <div class="pedido" id="pedido">
-            <!-- <div class="vacio">
-              <div class="imagen-cont">
-                <img class="imagen" src="../images/carrito_vacio.webp" alt="" />
-              </div>
-            </div> -->
-          </div>
-        </div>
-        <div class="resumen col-12 col-lg-4 mt-5 mb-5">
-          <h3>RESUMEN DEL PEDIDO</h3>
+    <div class="shop mt-5 mb-5">
+      <div class="container">
+        <div class="shop-productos">
           <div class="row">
-            <h5 class="col-8 cantidad-productos" id=""></h5>
-            <h5 class="col-4 total-carrito" id="total-carrito">$</h5>
+            <div class="col-8">
+              <input
+                type="text"
+                id="nProd"
+                placeholder="Producto a buscar..."
+              />
+            </div>
+            <div class="col-4">
+              <select name="orden" id="orden">
+                <option value="">Ordenar...</option>
+                <option value="Alfabeticamente">Alfabeticamente</option>
+                <option value="mayorMenor">Precio Mayor a Menor</option>
+                <option value="menorMayor">Precio Menor a Mayor</option>
+              </select>
+            </div>
           </div>
-          <div class="row">
-            <h5 class="col-8">ENTREGA</h5>
-            <h5 class="col-4">GRATIS</h5>
-            <hr />
-          </div>
-          <div class="row">
-            <h4 class="col-8">TOTAL</h4>
-            <h4 class="col-4 total-carrito">$</h4>
-            <small>IVA Incluido</small>
-            <hr />
-          </div>
-          <div class="pago">
-            <button class="btn btn-warning" id="finalizar-compra">
-              Finalizar Compra
-            </button>
-          </div>
+          <hr />
+          <div class="row" id="shop-productos"></div>
         </div>
       </div>
     </div>
@@ -193,8 +165,10 @@
 
     <!-- script propio -->
     <script src="../js/nav.js"></script>
+    <script src="../js/clases.js"></script>
+    <script src="../js/fetchCatalogo.js"></script>
     <script src="../js/locaStorageCarrito.js"></script>
     <script src="../js/comprar.js"></script>
-    <script src="../js/carrito.js"></script>
+    <script src="../js/shop.js"></script>
   </body>
 </html>

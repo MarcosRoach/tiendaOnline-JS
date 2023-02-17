@@ -12,10 +12,17 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <!-- Sweet Alert 2 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
     <!-- Estilos -->
     <link rel="stylesheet" href="css/style.css" />
 
-    <title>Tienda MSR</title>
+    <title>MSR STORE</title>
+    <!-- Fav Icon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.webp" />
   </head>
   <body>
     <nav
@@ -43,10 +50,7 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Shop</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
+              <a class="nav-link" href="html/shop.html">Shop</a>
             </li>
           </ul>
           <form class="d-flex mt-3 mb-3">
@@ -130,7 +134,6 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-
     <!-- CAROUSEL -->
 
     <!-- POLITICAS -->
@@ -143,7 +146,7 @@
             </div>
             <div class="datos col-12 col-lg-10">
               <h5>ENVÍO GRATUITO</h5>
-              <p class="mb-0">Lorem Ipsum Is Simply Dummy Text</p>
+              <p class="mb-0">Envios gratuitos a todo el pais</p>
             </div>
           </div>
           <div class="row col-12 col-md-4 align-items-center mt-5 mb-5">
@@ -152,7 +155,7 @@
             </div>
             <div class="datos col-12 col-lg-10">
               <h5>SERVICIO AL CLIENTE 24/7</h5>
-              <p class="mb-0">Lorem Ipsum Is Simply Dummy Text</p>
+              <p class="mb-0">Tenemos atencion al cliente continua</p>
             </div>
           </div>
           <div class="row col-12 col-md-4 align-items-center mt-5 mb-5">
@@ -161,7 +164,7 @@
             </div>
             <div class="datos col-12 col-lg-10">
               <h5>GARANTÍA DE REEMBOLSO</h5>
-              <p class="mb-0">Lorem Ipsum Is Simply Dummy Text</p>
+              <p class="mb-0">Grarantia 100% asegurada</p>
             </div>
           </div>
         </div>
@@ -190,7 +193,9 @@
           Las Mejores Ofertas Y Ofertas En Línea <br />
           <span>Productos Premium</span>
         </h2>
-        <button class="btn btn-warning" id="comp">COMPRAR</button>
+        <button class="btn btn-warning" id="comp">
+          <a href="html/shop.html">COMPRAR</a>
+        </button>
       </div>
     </div>
     <!-- IMAGEN FIJA -->
@@ -306,10 +311,18 @@
       integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
       crossorigin="anonymous"
     ></script>
-    <!-- Sweet Alert -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Sweet Alert 2 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"
+      integrity="sha256-Y16qmk55km4bhE/z6etpTsUnfIHqh95qR4al28kAPEU="
+      crossorigin="anonymous"
+    ></script>
     <!-- script propio -->
     <script src="js/nav.js"></script>
+    <script src="js/clases.js"></script>
+    <script src="js/fetchCatalogo.js"></script>
+    <script src="js/locaStorageCarrito.js"></script>
+    <script src="js/comprar.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -1,24 +1,31 @@
 window.addEventListener("load", function (event) {
-  // Cargo carrito de localStorage o si es vacio declaro la variable vacia
-  if (localStorage.getItem("carrito")) {
-    carrito = JSON.parse(localStorage.getItem("carrito"));
-  } else {
-    let carrito = [];
-  }
-
   // CAPTURAS DE DOM------------------------------------------------------
+  // div de pedido apara cargar el carrito
   let tarjetaCarrito = document.getElementById("pedido");
-
+  // etiqueta cantidad d productos
   let cantidadProductos = document.getElementsByClassName("cantidad-productos");
+  // etiqueta total de pedido
   let totalCarrito = document.getElementsByClassName("total-carrito");
+  // botones eliminar
+  let botonesEliminar = document.getElementsByClassName("btn-eliminar");
+  // botones agregar
+  let botonesAgregar = document.getElementsByClassName("btn-agregar");
+  // Boton Finalizr compra
+  let finalizarCompra = document.getElementById("finalizar-compra");
+
+  // CAPTURA DE DOM-------------------------------------------------------
 
   // LLAMAR A FUNCIONES---------------------------------------------------
   // Cargar Icono Carrito
   cargarCarritoIcono(carrito);
 
+  // dibujar carrito
   renderizarCarrito(carrito);
 
+  // LLAMAR A FUNCIONES---------------------------------------------------
+
   // MANIPULACION DE DOM--------------------------------------------------
+
   // Carga de tarjetas al DOM
   function renderizarCarrito() {
     tarjetaCarrito.innerHTML = "";
@@ -30,7 +37,8 @@ window.addEventListener("load", function (event) {
         let totalFinal = precioVenta(producto);
 
         // acumulador carrito
-        totalImporteCarrito += precioVenta(producto);
+
+        totalImporteCarrito = calculoImporteCarrito(carrito);
 
         let nuevaTarjeta = document.createElement("div");
         nuevaTarjeta.classList.add(
@@ -53,19 +61,22 @@ window.addEventListener("load", function (event) {
                   <p>
                   ${producto.descripcion}
                   </p>
+                  <div>
+                  <h3> Cantidad:  ${producto.cantidad}</h3>
+                  </div>
                   <h3>$ ${producto.precio}</h3>
                   <h3>Descuento ${producto.descuentoPorcentaje}%</h3>
                   <h2>Total $ ${totalFinal}</h2>
                 </div>
-                <div class="eliminar col-12">
-                  <button class="btn-eliminar btn btn-warning" id="${producto.id}">Eliminar</button>
+                <div class="eliminar row col-12">
+                  <button class="btn-eliminar btn btn-warning col-6" id="${producto.id}">Eliminar</button>
+                  <button class="btn-agregar btn btn-primary col-6" id="${producto.id}">Agregar</button>
                 </div>
         `;
 
         tarjetaCarrito.append(nuevaTarjeta);
       });
     } else {
-      console.log("vacio");
       let divVacio = document.createElement("div");
       divVacio.classList.add("vacio", "mt-2", "mb-2");
 
@@ -80,10 +91,12 @@ window.addEventListener("load", function (event) {
 
     // carga cantidad de productos
     for (const etiqueta of cantidadProductos) {
+      const cantProCarrito = cantidadProductosCarrito(carrito);
+
       if (carrito.length > 0) {
-        etiqueta.innerText = carrito.length + " Productos";
+        etiqueta.innerText = cantProCarrito + " Productos";
       } else {
-        etiqueta.innerText = carrito.length + " Producto";
+        etiqueta.innerText = cantProCarrito + " Producto";
       }
     }
 
@@ -93,13 +106,46 @@ window.addEventListener("load", function (event) {
     }
   }
 
-  // CAPTURA DE DOM----------------------------------------------------------------
-  function botonesEliminar() {
-    let botonesEliminar = document.getElementsByClassName("btn-eliminar");
-    return botonesEliminar;
-  }
   // genero el listener con los botones capturados del DOM
-  cargarListeerEliminar(botonesEliminar());
+  cargarListeerEliminar(botonesEliminar);
+  cargarListeerAgregar(botonesAgregar);
+
+  // listener finalizar compra
+  finalizarCompra.addEventListener("click", () => {
+    Swal.fire({
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+
+      title: "Seguro de Finalizar la Compra?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3BED6D",
+      cancelButtonColor: "#ED1818",
+      confirmButtonText: "SI, Finalizar!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // vaciar Local storage
+        localStorage.removeItem("carrito");
+        // vaciar carrito
+        carrito = [];
+        cargarCarritoIcono(carrito);
+
+        Swal.fire({
+          title: "Compra Finalizada",
+          icon: "success",
+        });
+
+        renderizarCarrito(carrito);
+      } else {
+      }
+    });
+  });
+
+  // FUNCIONES------------------------------------------------------------
 
   function cargarListeerEliminar(arrBotonesEliminar) {
     for (const boton of arrBotonesEliminar) {
@@ -110,12 +156,13 @@ window.addEventListener("load", function (event) {
     }
   }
 
-  // FUNCIONES------------------------------------------------------------
-
-  // Cargar Icono Carrito
-  function cargarCarritoIcono(arrCarrito) {
-    const carritoCantidad = document.getElementById("carrito-cantidad");
-    carritoCantidad.innerText = arrCarrito.length;
+  function cargarListeerAgregar(arrBotonesAgregar) {
+    for (const boton of arrBotonesAgregar) {
+      boton.addEventListener("click", () => {
+        let idProducto = boton.id;
+        agregarProducto(idProducto, carrito);
+      });
+    }
   }
 
   // devolver precio de venta normal o con descuento
@@ -129,10 +176,15 @@ window.addEventListener("load", function (event) {
 
   // Eliminar producto de carrito
   function eliminarProducto(idProducto, arrCarrito) {
+    let proEliminar = buscarProducto(idProducto, arrCarrito);
     let indice = indiceEliminar(idProducto, arrCarrito);
 
-    // borrar elemento array
-    arrCarrito.splice(indice, 1);
+    if (proEliminar.cantidad > 1) {
+      proEliminar.cantidad -= 1;
+    } else {
+      // borrar elemento array
+      arrCarrito.splice(indice, 1);
+    }
 
     // cargar en localStorage
     localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -140,14 +192,58 @@ window.addEventListener("load", function (event) {
     cargarCarritoIcono(arrCarrito);
     // redibujar carrito
     renderizarCarrito(carrito);
-    swal("PRODUCTO", "ELIMINADO DEL CARRITO", "error");
+    // alerta
+    Swal.fire({
+      position: "top-center",
+      icon: "error",
+      title: "Producto eliminado del carrito",
+      showConfirmButton: false,
+      timer: 2000,
+    });
     // genero los listener para los nuevos botones eliminar
-    cargarListeerEliminar(botonesEliminar());
+    cargarListeerEliminar(botonesEliminar);
+    // genero los listener para los nuevos botones Agregar
+    cargarListeerAgregar(botonesAgregar);
+  }
+
+  function agregarProducto(idProducto, arrCarrito) {
+    let productoBuscado = buscarProducto(idProducto, arrCarrito);
+    productoBuscado.cantidad += 1;
+
+    // cargar en localStorage
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    // cargar icono nav
+    cargarCarritoIcono(arrCarrito);
+    // redibujar carrito
+    renderizarCarrito(carrito);
+    // alerta
+    Swal.fire({
+      position: "top-center",
+      icon: "success",
+      title: "Producto Agregado al carrito",
+      showConfirmButton: false,
+      timer: 2000,
+    });
+    // genero los listener para los nuevos botones Agregar
+    cargarListeerAgregar(botonesAgregar);
+    // genero los listener para los nuevos botones eliminar
+    cargarListeerEliminar(botonesEliminar);
   }
 
   // Obtener Indice a eliminar
   function indiceEliminar(id, array) {
     let index = array.findIndex((elemento) => elemento.id == id);
     return index;
+  }
+
+  function calculoImporteCarrito(arrCarrito) {
+    let total = 0;
+
+    arrCarrito.forEach((producto) => {
+      let preVent = precioVenta(producto);
+      total += producto.cantidad * preVent;
+    });
+
+    return total;
   }
 });
